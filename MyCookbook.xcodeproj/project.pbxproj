@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		911FE7CA2BAC1E7F0055F16E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 911FE7C92BAC1E7F0055F16E /* heart.png */; };
 		911FE7CC2BAC26670055F16E /* AddCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911FE7CB2BAC26670055F16E /* AddCategoryTableViewController.swift */; };
 		9127C2E62BA449E00038FB55 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127C2E42BA449E00038FB55 /* SearchTableViewCell.swift */; };
 		9127C2E72BA449E00038FB55 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9127C2E52BA449E00038FB55 /* SearchTableViewCell.xib */; };
@@ -24,10 +23,10 @@
 		9191B3292BA41B2C00F3B449 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B3282BA41B2C00F3B449 /* CategoriesViewController.swift */; };
 		9191B32C2BA41B8700F3B449 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191B32A2BA41B8700F3B449 /* CategoryTableViewCell.swift */; };
 		9191B32D2BA41B8700F3B449 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9191B32B2BA41B8700F3B449 /* CategoryTableViewCell.xib */; };
+		91E44CBB2BAC34240009C9AC /* PickImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E44CBA2BAC34240009C9AC /* PickImageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		911FE7C92BAC1E7F0055F16E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		911FE7CB2BAC26670055F16E /* AddCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryTableViewController.swift; sourceTree = "<group>"; };
 		9127C2E42BA449E00038FB55 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		9127C2E52BA449E00038FB55 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		9191B3282BA41B2C00F3B449 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		9191B32A2BA41B8700F3B449 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9191B32B2BA41B8700F3B449 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		91E44CBA2BAC34240009C9AC /* PickImageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +86,7 @@
 				9135FD692B9590BD006F4BA9 /* LoginViewController.swift */,
 				91545A682BA05BCF00E16526 /* AddViewController.swift */,
 				9191B3282BA41B2C00F3B449 /* CategoriesViewController.swift */,
+				91E44CBA2BAC34240009C9AC /* PickImageTableViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -124,7 +125,6 @@
 				91545A702BA0694100E16526 /* Model */,
 				9190EA7A2B8DCC8E00EC969F /* Main.storyboard */,
 				9190EA7D2B8DCC8F00EC969F /* Assets.xcassets */,
-				911FE7C92BAC1E7F0055F16E /* heart.png */,
 				9190EA7F2B8DCC8F00EC969F /* LaunchScreen.storyboard */,
 				9190EA822B8DCC8F00EC969F /* Info.plist */,
 				911FE7CB2BAC26670055F16E /* AddCategoryTableViewController.swift */,
@@ -194,7 +194,6 @@
 				9190EA7E2B8DCC8F00EC969F /* Assets.xcassets in Resources */,
 				9190EA7C2B8DCC8E00EC969F /* Main.storyboard in Resources */,
 				9191B32D2BA41B8700F3B449 /* CategoryTableViewCell.xib in Resources */,
-				911FE7CA2BAC1E7F0055F16E /* heart.png in Resources */,
 				9127C2E72BA449E00038FB55 /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +211,7 @@
 				91545A692BA05BCF00E16526 /* AddViewController.swift in Sources */,
 				9190EA752B8DCC8E00EC969F /* AppDelegate.swift in Sources */,
 				9135FD6A2B9590BD006F4BA9 /* LoginViewController.swift in Sources */,
+				91E44CBB2BAC34240009C9AC /* PickImageTableViewController.swift in Sources */,
 				9190EA772B8DCC8E00EC969F /* SceneDelegate.swift in Sources */,
 				91545A722BA0696000E16526 /* CategoryList.swift in Sources */,
 				911FE7CC2BAC26670055F16E /* AddCategoryTableViewController.swift in Sources */,
@@ -385,6 +385,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,6 +416,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

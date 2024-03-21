@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,6 +31,8 @@
                             </label>
                             <searchBar contentMode="redraw" placeholder="Type your ingredients" translatesAutoresizingMaskIntoConstraints="NO" id="0mF-PX-0iM">
                                 <rect key="frame" x="0.0" y="183" width="393" height="56"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" systemColor="tintColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="se9-nH-eWe"/>
@@ -55,7 +58,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wRh-Cs-fHy" firstAttribute="top" secondItem="0mF-PX-0iM" secondAttribute="bottom" constant="4" id="1hv-Ju-ie7"/>
                             <constraint firstItem="cgd-Wm-3zc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3Ay-vd-uUh"/>
@@ -167,8 +170,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="53.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mia-gw-k7f">
-                                                    <rect key="frame" x="40" y="14.999999999999998" width="42" height="23.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mia-gw-k7f">
+                                                    <rect key="frame" x="40" y="14.999999999999998" width="46.666666666666657" height="23.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -190,6 +193,9 @@
                                                 <constraint firstItem="Mia-gw-k7f" firstAttribute="top" secondItem="d04-3r-atw" secondAttribute="topMargin" constant="4" id="wfd-XC-09R"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uhm-Ow-b4M" kind="show" identifier="showImages" id="gtY-Yy-w0R"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -199,11 +205,65 @@
                             <outlet property="delegate" destination="Xib-Ud-YXJ" id="eBz-SX-G1X"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4Yk-rf-GYR"/>
+                    <navigationItem key="navigationItem" id="4Yk-rf-GYR">
+                        <barButtonItem key="rightBarButtonItem" title="done" id="DzE-jq-bsJ">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="Xib-Ud-YXJ" id="Une-AR-cpx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="donebutton" destination="DzE-jq-bsJ" id="jzM-rx-irb"/>
+                        <outlet property="image" destination="ceo-Oq-VpF" id="RgR-af-2Ek"/>
+                        <outlet property="nameTF" destination="w8X-u6-pfj" id="hRf-Re-inG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxV-gU-Pqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4541" y="1481"/>
+        </scene>
+        <!--Pick Image Table View Controller-->
+        <scene sceneID="JFl-LN-Z11">
+            <objects>
+                <tableViewController id="uhm-Ow-b4M" customClass="PickImageTableViewController" customModule="MyCookbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="SgT-UW-DhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" textLabel="lWH-bl-ccT" imageView="dOO-87-EJ4" style="IBUITableViewCellStyleDefault" id="dB8-UE-vB1">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dB8-UE-vB1" id="Pzf-l7-92g">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lWH-bl-ccT">
+                                            <rect key="frame" x="62.333333333333343" y="0.0" width="310.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dOO-87-EJ4">
+                                            <rect key="frame" x="16.666666666666664" y="10.000000000000002" width="30.666666666666668" height="23.666666666666668"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <imageReference key="image" image="photo" catalog="system" symbolScale="large"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uhm-Ow-b4M" id="oAl-An-de8"/>
+                            <outlet property="delegate" destination="uhm-Ow-b4M" id="XWi-eh-9Vi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bSh-QF-oJU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOu-IR-ehf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5833" y="1481"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="cb1-92-Ral">
@@ -440,6 +500,7 @@
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
@@ -448,8 +509,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

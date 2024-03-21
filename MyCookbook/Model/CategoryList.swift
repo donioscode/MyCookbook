@@ -8,8 +8,28 @@
 import Foundation
 
 
-class CategoryList {
+class CategoryList: NSObject,Codable {
    // var name = ["Breakfast","Lunch","Drinks","Pastas","Salads","Desserts","Soups"]
-    let name = ["Breakfast","Breakfast","Breakfast","Breakfast",]
-    let image = ["table2","table2","table2","table2","table2",]
+    var name = ""
+    var image = ""
+    
+    init(name: String,image: String) {
+        self.name = name
+        self.image = image
+    }
+    
 }
+
+class categorylist: NSObject,Codable {
+    var name = ""
+    var imageName = "breakfast"
+    var items: [CategoryList] = []
+    
+    
+    init(name: String = "", imageName: String = "breakfast") {
+        self.name = name
+        self.imageName = imageName
+        super.init()
+    }
+}
+

@@ -30,17 +30,9 @@ class SearchTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    //    @IBAction func heartTapped(_ sender: UIButton) {
-    
-    //        }
-    //        print("hello heart")
-    //    }
-    
-    
+ 
     @IBAction func heartTapped(_ sender: UIButton) {
-        print( " jjeee" )
-        
+    
         if  heartIsEmpty {
             heartIsEmpty = false
             heartbutton.setImage(UIImage(named: "heart"), for: .normal)
