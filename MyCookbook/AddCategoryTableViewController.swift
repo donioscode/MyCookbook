@@ -12,9 +12,5 @@ class AddCategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        
     }
 }
